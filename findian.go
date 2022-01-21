@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -9,7 +11,10 @@ func main() {
 	var userInput string
 	fmt.Println("Enter a string: ")
 
-	fmt.Scan(&userInput)
+	scanner := bufio.NewScanner(os.Stdin)
+	if scanner.Scan() {
+		userInput = scanner.Text()
+	}
 
 	var result string
 	if containsIan(userInput) {
@@ -22,5 +27,5 @@ func main() {
 }
 
 func containsIan(text string) bool {
-	return text[0] == 'i' && text[len(text)-1] == 'n' && strings.Contains(text, "a")
+	return (text[0] == 'i' || text[0] == 'I') && (text[len(text)-1] == 'n' || text[len(text)-1] == 'N') && (strings.Contains(text, "a") || strings.Contains(text, "A"))
 }
