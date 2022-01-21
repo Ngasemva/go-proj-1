@@ -8,24 +8,16 @@ import (
 )
 
 func main() {
-	var userInput string
-	fmt.Println("Enter a string: ")
-
+	var strInput string
+	fmt.Println("Input the string : ")
 	scanner := bufio.NewScanner(os.Stdin)
-	if scanner.Scan() {
-		userInput = scanner.Text()
-	}
-
-	var result string
-	if containsIan(userInput) {
-		result = "Found!"
+	scanner.Scan()
+	strInput = scanner.Text()
+	var lowerStrInput string = strings.ToLower(strInput)
+	fmt.Println(lowerStrInput)
+	if strings.HasPrefix(lowerStrInput, "i") && strings.HasSuffix(lowerStrInput, "n") && strings.Contains(lowerStrInput, "a") {
+		fmt.Println("Found!")
 	} else {
-		result = "Not Found!"
+		fmt.Println("Not Found!")
 	}
-
-	fmt.Printf("%s", result)
-}
-
-func containsIan(text string) bool {
-	return (text[0] == 'i' || text[0] == 'I') && (text[len(text)-1] == 'n' || text[len(text)-1] == 'N') && (strings.Contains(text, "a") || strings.Contains(text, "A"))
 }
