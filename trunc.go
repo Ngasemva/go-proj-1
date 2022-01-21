@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func old_trunc() {
 	var userFloat float32
 	fmt.Println("Enter a floating point number: ")
 
