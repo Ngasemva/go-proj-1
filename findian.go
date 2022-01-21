@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func old_findian() {
 	var strInput string
 	fmt.Println("Input the string : ")
 	scanner := bufio.NewScanner(os.Stdin)
