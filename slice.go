@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	s := make([]int, 3)
+	s := make([]int, 0, 3)
 
 	for {
 		var userInput string
@@ -23,7 +23,7 @@ func main() {
 				fmt.Println("Stopping the program")
 				break
 			} else {
-				fmt.Println("Please type an integer or X/x to quit")
+				fmt.Printf("The only acceptable inputs are integers or x/X, Your input %s was not accepted\n", userInput)
 				continue
 			}
 			fmt.Println(userInput)
